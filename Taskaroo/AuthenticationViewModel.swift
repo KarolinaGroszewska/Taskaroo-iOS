@@ -45,13 +45,9 @@ class AuthenticationViewModel: ObservableObject {
       }
     }
     func signOut() {
-      // 1
       GIDSignIn.sharedInstance.signOut()
-      
       do {
-        // 2
         try Auth.auth().signOut()
-        
         state = .signedOut
       } catch {
         print(error.localizedDescription)

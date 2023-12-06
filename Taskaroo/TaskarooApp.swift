@@ -27,7 +27,7 @@ struct TaskarooApp: App {
 }
 extension TaskarooApp {
   private func setupAuthentication() {
-    FirebaseApp.configure()
+      FirebaseApp.configure()
       let db = Firestore.firestore()
   }
 }
