@@ -14,6 +14,7 @@ struct SignInWithAppleSwiftUIButton: View {
 
     var body: some View {
         SignInButton(SignInWithAppleButton.Style.black)
+            .padding([.bottom], 2)
     }
 
     func SignInButton(_ type: SignInWithAppleButton.Style) -> some View{

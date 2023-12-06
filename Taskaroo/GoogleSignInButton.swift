@@ -2,24 +2,29 @@
 //  GoogleSignInButton.swift
 //  Taskaroo
 //
-//  Created by Kari Groszewska on 12/4/23.
+//  Created by Kari Groszewska on 12/5/23.
 //
 
 import SwiftUI
-import GoogleSignIn
 
-struct GoogleSignInButton: UIViewRepresentable {
-  @Environment(\.colorScheme) var colorScheme
-  
-  private var button = GIDSignInButton()
+struct SignInWithGoogleSwiftUIButton: View {
+    @EnvironmentObject var viewModel: AuthenticationViewModel
 
-  func makeUIView(context: Context) -> GIDSignInButton {
-    button.colorScheme = colorScheme == .dark ? .dark : .light
-      button.style = .iconOnly
-    return button
-  }
-
-  func updateUIView(_ uiView: UIViewType, context: Context) {
-    button.colorScheme = colorScheme == .dark ? .dark : .light
-  }
+    var body: some View {
+        Button(action: {
+            viewModel.signIn()
+        }){
+            Image("google-logo")
+                .resizable()
+                .frame(width: 20, height: 20)
+            Text("Sign in with Google")
+                .foregroundColor(.white)
+                .font(.system(size: 24))
+                .fontWeight(.medium)
+        }
+        .padding()
+        .frame(width: 280, height: 60, alignment: .center)
+        .background(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
+            .cornerRadius(5))
+    }
 }

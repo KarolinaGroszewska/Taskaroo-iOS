@@ -11,8 +11,6 @@ import FirebaseOAuthUI
 
 
 struct AuthView: View {
-    @EnvironmentObject var viewModel: AuthenticationViewModel
-    
     var body: some View {
         ZStack{
             Color(red: 214/255, green: 215/255, blue: 217/255).ignoresSafeArea()
@@ -35,22 +33,8 @@ struct AuthView: View {
                     .padding([.bottom], 20)
                 
                 SignInWithAppleSwiftUIButton()
-                    .padding([.bottom], 2)
-                Button(action: {
-                    viewModel.signIn()
-                }){
-                    Image("google-logo")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                    Text("Sign in with Google")
-                        .foregroundColor(.white)
-                        .font(.system(size: 24))
-                        .fontWeight(.medium)
-                }
-                .padding()
-                .frame(width: 280, height: 60, alignment: .center)
-                .background(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
-                    .cornerRadius(5))
+                SignInWithGoogleSwiftUIButton()
+
                 Spacer()
             }
         }

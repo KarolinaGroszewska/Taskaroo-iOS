@@ -8,6 +8,7 @@
 import SwiftUI
 import FirebaseCore
 import FirebaseAuthUI
+import FirebaseFirestore
 
 
 @main
@@ -27,5 +28,6 @@ struct TaskarooApp: App {
 extension TaskarooApp {
   private func setupAuthentication() {
     FirebaseApp.configure()
+      let db = Firestore.firestore()
   }
 }
