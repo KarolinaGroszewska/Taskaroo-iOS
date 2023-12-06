@@ -6,12 +6,26 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import FirebaseAuthUI
+
 
 @main
 struct TaskarooApp: App {
+    @StateObject var viewModel = AuthenticationViewModel()
+
+    init() {
+      setupAuthentication()
+    }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AuthView()
+                .environmentObject(viewModel)
         }
     }
+}
+extension TaskarooApp {
+  private func setupAuthentication() {
+    FirebaseApp.configure()
+  }
 }

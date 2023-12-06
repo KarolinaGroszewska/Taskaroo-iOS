@@ -7,18 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A0C07022B1EA814005C261D /* AppleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0C07012B1EA814005C261D /* AppleSignInButton.swift */; };
 		4A7DBCEF2B1E9422002553C0 /* TaskarooApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7DBCEE2B1E9422002553C0 /* TaskarooApp.swift */; };
-		4A7DBCF12B1E9422002553C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7DBCF02B1E9422002553C0 /* ContentView.swift */; };
-		4A7DBCF32B1E9423002553C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A7DBCF22B1E9423002553C0 /* Assets.xcassets */; };
+		4A7DBCF12B1E9422002553C0 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7DBCF02B1E9422002553C0 /* AuthView.swift */; };
 		4A7DBCF62B1E9423002553C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A7DBCF52B1E9423002553C0 /* Preview Assets.xcassets */; };
+		4A7DBD362B1E979C002553C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A7DBD352B1E979B002553C0 /* GoogleService-Info.plist */; };
+		4AED9E282B1E9F2400EBB809 /* FirebaseAnonymousAuthUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4AED9E272B1E9F2400EBB809 /* FirebaseAnonymousAuthUI */; };
+		4AED9E2A2B1E9F2400EBB809 /* FirebaseAuthUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4AED9E292B1E9F2400EBB809 /* FirebaseAuthUI */; };
+		4AED9E2C2B1E9F2400EBB809 /* FirebaseDatabaseUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4AED9E2B2B1E9F2400EBB809 /* FirebaseDatabaseUI */; };
+		4AED9E2E2B1E9F2400EBB809 /* FirebaseEmailAuthUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4AED9E2D2B1E9F2400EBB809 /* FirebaseEmailAuthUI */; };
+		4AED9E302B1E9F2400EBB809 /* FirebaseFacebookAuthUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4AED9E2F2B1E9F2400EBB809 /* FirebaseFacebookAuthUI */; };
+		4AED9E322B1E9F2400EBB809 /* FirebaseFirestoreUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4AED9E312B1E9F2400EBB809 /* FirebaseFirestoreUI */; };
+		4AED9E342B1E9F2400EBB809 /* FirebaseGoogleAuthUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4AED9E332B1E9F2400EBB809 /* FirebaseGoogleAuthUI */; };
+		4AED9E362B1E9F2400EBB809 /* FirebaseOAuthUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4AED9E352B1E9F2400EBB809 /* FirebaseOAuthUI */; };
+		4AED9E382B1E9F2400EBB809 /* FirebasePhoneAuthUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4AED9E372B1E9F2400EBB809 /* FirebasePhoneAuthUI */; };
+		4AED9E3A2B1E9F2400EBB809 /* FirebaseStorageUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4AED9E392B1E9F2400EBB809 /* FirebaseStorageUI */; };
+		4AED9E3C2B1EA0B000EBB809 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AED9E3B2B1EA0B000EBB809 /* AuthenticationViewModel.swift */; };
+		4AED9E3E2B1EA1C400EBB809 /* GoogleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AED9E3D2B1EA1C400EBB809 /* GoogleSignInButton.swift */; };
+		4AED9E402B1EA67600EBB809 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AED9E3F2B1EA67600EBB809 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A0C07012B1EA814005C261D /* AppleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInButton.swift; sourceTree = "<group>"; };
 		4A7DBCEB2B1E9422002553C0 /* Taskaroo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taskaroo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A7DBCEE2B1E9422002553C0 /* TaskarooApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskarooApp.swift; sourceTree = "<group>"; };
-		4A7DBCF02B1E9422002553C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		4A7DBCF22B1E9423002553C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A7DBCF02B1E9422002553C0 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		4A7DBCF52B1E9423002553C0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4A7DBD352B1E979B002553C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4AED9E3B2B1EA0B000EBB809 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		4AED9E3D2B1EA1C400EBB809 /* GoogleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInButton.swift; sourceTree = "<group>"; };
+		4AED9E3F2B1EA67600EBB809 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +44,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AED9E2E2B1E9F2400EBB809 /* FirebaseEmailAuthUI in Frameworks */,
+				4AED9E322B1E9F2400EBB809 /* FirebaseFirestoreUI in Frameworks */,
+				4AED9E282B1E9F2400EBB809 /* FirebaseAnonymousAuthUI in Frameworks */,
+				4AED9E3A2B1E9F2400EBB809 /* FirebaseStorageUI in Frameworks */,
+				4AED9E342B1E9F2400EBB809 /* FirebaseGoogleAuthUI in Frameworks */,
+				4AED9E382B1E9F2400EBB809 /* FirebasePhoneAuthUI in Frameworks */,
+				4AED9E2A2B1E9F2400EBB809 /* FirebaseAuthUI in Frameworks */,
+				4AED9E302B1E9F2400EBB809 /* FirebaseFacebookAuthUI in Frameworks */,
+				4AED9E2C2B1E9F2400EBB809 /* FirebaseDatabaseUI in Frameworks */,
+				4AED9E362B1E9F2400EBB809 /* FirebaseOAuthUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,9 +79,13 @@
 		4A7DBCED2B1E9422002553C0 /* Taskaroo */ = {
 			isa = PBXGroup;
 			children = (
+				4A7DBD352B1E979B002553C0 /* GoogleService-Info.plist */,
+				4AED9E3B2B1EA0B000EBB809 /* AuthenticationViewModel.swift */,
 				4A7DBCEE2B1E9422002553C0 /* TaskarooApp.swift */,
-				4A7DBCF02B1E9422002553C0 /* ContentView.swift */,
-				4A7DBCF22B1E9423002553C0 /* Assets.xcassets */,
+				4AED9E3D2B1EA1C400EBB809 /* GoogleSignInButton.swift */,
+				4A0C07012B1EA814005C261D /* AppleSignInButton.swift */,
+				4A7DBCF02B1E9422002553C0 /* AuthView.swift */,
+				4AED9E3F2B1EA67600EBB809 /* Assets.xcassets */,
 				4A7DBCF42B1E9423002553C0 /* Preview Content */,
 			);
 			path = Taskaroo;
@@ -83,6 +115,18 @@
 			dependencies = (
 			);
 			name = Taskaroo;
+			packageProductDependencies = (
+				4AED9E272B1E9F2400EBB809 /* FirebaseAnonymousAuthUI */,
+				4AED9E292B1E9F2400EBB809 /* FirebaseAuthUI */,
+				4AED9E2B2B1E9F2400EBB809 /* FirebaseDatabaseUI */,
+				4AED9E2D2B1E9F2400EBB809 /* FirebaseEmailAuthUI */,
+				4AED9E2F2B1E9F2400EBB809 /* FirebaseFacebookAuthUI */,
+				4AED9E312B1E9F2400EBB809 /* FirebaseFirestoreUI */,
+				4AED9E332B1E9F2400EBB809 /* FirebaseGoogleAuthUI */,
+				4AED9E352B1E9F2400EBB809 /* FirebaseOAuthUI */,
+				4AED9E372B1E9F2400EBB809 /* FirebasePhoneAuthUI */,
+				4AED9E392B1E9F2400EBB809 /* FirebaseStorageUI */,
+			);
 			productName = Taskaroo;
 			productReference = 4A7DBCEB2B1E9422002553C0 /* Taskaroo.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +155,9 @@
 				Base,
 			);
 			mainGroup = 4A7DBCE22B1E9422002553C0;
+			packageReferences = (
+				4AED9E262B1E9F2400EBB809 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */,
+			);
 			productRefGroup = 4A7DBCEC2B1E9422002553C0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,7 +173,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A7DBCF62B1E9423002553C0 /* Preview Assets.xcassets in Resources */,
-				4A7DBCF32B1E9423002553C0 /* Assets.xcassets in Resources */,
+				4AED9E402B1EA67600EBB809 /* Assets.xcassets in Resources */,
+				4A7DBD362B1E979C002553C0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +185,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A7DBCF12B1E9422002553C0 /* ContentView.swift in Sources */,
+				4AED9E3E2B1EA1C400EBB809 /* GoogleSignInButton.swift in Sources */,
+				4A0C07022B1EA814005C261D /* AppleSignInButton.swift in Sources */,
+				4AED9E3C2B1EA0B000EBB809 /* AuthenticationViewModel.swift in Sources */,
+				4A7DBCF12B1E9422002553C0 /* AuthView.swift in Sources */,
 				4A7DBCEF2B1E9422002553C0 /* TaskarooApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +323,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Taskaroo/Preview Content\"";
+				DEVELOPMENT_TEAM = A78GUNKTH2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -300,6 +352,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Taskaroo/Preview Content\"";
+				DEVELOPMENT_TEAM = A78GUNKTH2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -342,6 +395,70 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4AED9E262B1E9F2400EBB809 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/FirebaseUI-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4AED9E272B1E9F2400EBB809 /* FirebaseAnonymousAuthUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AED9E262B1E9F2400EBB809 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseAnonymousAuthUI;
+		};
+		4AED9E292B1E9F2400EBB809 /* FirebaseAuthUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AED9E262B1E9F2400EBB809 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseAuthUI;
+		};
+		4AED9E2B2B1E9F2400EBB809 /* FirebaseDatabaseUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AED9E262B1E9F2400EBB809 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseDatabaseUI;
+		};
+		4AED9E2D2B1E9F2400EBB809 /* FirebaseEmailAuthUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AED9E262B1E9F2400EBB809 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseEmailAuthUI;
+		};
+		4AED9E2F2B1E9F2400EBB809 /* FirebaseFacebookAuthUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AED9E262B1E9F2400EBB809 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseFacebookAuthUI;
+		};
+		4AED9E312B1E9F2400EBB809 /* FirebaseFirestoreUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AED9E262B1E9F2400EBB809 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseFirestoreUI;
+		};
+		4AED9E332B1E9F2400EBB809 /* FirebaseGoogleAuthUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AED9E262B1E9F2400EBB809 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseGoogleAuthUI;
+		};
+		4AED9E352B1E9F2400EBB809 /* FirebaseOAuthUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AED9E262B1E9F2400EBB809 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseOAuthUI;
+		};
+		4AED9E372B1E9F2400EBB809 /* FirebasePhoneAuthUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AED9E262B1E9F2400EBB809 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebasePhoneAuthUI;
+		};
+		4AED9E392B1E9F2400EBB809 /* FirebaseStorageUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AED9E262B1E9F2400EBB809 /* XCRemoteSwiftPackageReference "FirebaseUI-iOS" */;
+			productName = FirebaseStorageUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4A7DBCE32B1E9422002553C0 /* Project object */;
 }
