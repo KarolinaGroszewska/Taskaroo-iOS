@@ -15,6 +15,7 @@ struct GoogleSignInButton: UIViewRepresentable {
 
   func makeUIView(context: Context) -> GIDSignInButton {
     button.colorScheme = colorScheme == .dark ? .dark : .light
+      button.style = .iconOnly
     return button
   }
 
