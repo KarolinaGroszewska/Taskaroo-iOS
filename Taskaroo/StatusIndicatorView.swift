@@ -33,6 +33,13 @@ struct StatusIndicator: View {
                 .padding(8)
                 .background(Color(red: 155/255, green: 29/255, blue: 32/255))
                 .clipShape(Capsule())
+        case .archived:
+            Text("Archived")
+                .font(.footnote)
+                .foregroundColor(.white)
+                .padding(8)
+                .background(Color(red: 21/255, green: 99/255, blue: 139/255))
+                .clipShape(Capsule())
         }
         
     }
@@ -66,6 +73,14 @@ struct StatusIndicatorDetail: View {
                 .padding(8)
                 .padding([.leading, .trailing], 100)
                 .background(Color(red: 155/255, green: 29/255, blue: 32/255))
+                .clipShape(Capsule())
+        case .archived:
+            Text("Archived")
+                .font(.footnote)
+                .foregroundColor(.white)
+                .padding(8)
+                .padding([.leading, .trailing], 100)
+                .background(Color(red: 21/255, green: 99/255, blue: 139/255))
                 .clipShape(Capsule())
         }
         

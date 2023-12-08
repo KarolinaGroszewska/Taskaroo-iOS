@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TaskDetailView: View {
     @State var timerRunning: Bool = false
-    var task: Task
+    @State var task: Task
     var body: some View {
         ZStack{
             Color(red: 214/255, green: 215/255, blue: 217/255).ignoresSafeArea()
@@ -31,12 +31,14 @@ struct TaskDetailView: View {
                 HStack{
                     if task.status.rawValue == "completed"{
                         Button("", systemImage: "archivebox"){
+                            task.status = .archived
                         }
                         .font(.largeTitle)
                         .foregroundColor(Color(red: 21/255, green: 99/255, blue: 139/255))
                         .padding(.leading, 15)
                     }else{
                         Button("", systemImage: "checkmark.square"){
+                            task.status = .completed
                         }
                         .font(.largeTitle)
                         .foregroundColor(Color(red: 21/255, green: 99/255, blue: 139/255))
@@ -45,12 +47,14 @@ struct TaskDetailView: View {
                     Spacer()
                     if task.status.rawValue == "pending" {
                         Button("", systemImage: "xmark.octagon"){
+                            task.status = .blocked
                         }
                         .font(.largeTitle)
                         .foregroundColor(Color(red: 21/255, green: 99/255, blue: 139/255))
                     }
                     else{
                         Button("", systemImage: "exclamationmark.triangle"){
+                            task.status = .pending
                         }
                         .font(.largeTitle)
                         .foregroundColor(Color(red: 21/255, green: 99/255, blue: 139/255))

@@ -11,6 +11,7 @@ enum Status: String{
     case pending
     case completed
     case blocked
+    case archived
 }
 struct Task: Identifiable, Hashable{
     var id: Int
