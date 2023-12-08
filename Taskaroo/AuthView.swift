@@ -14,7 +14,8 @@ struct AuthView: View {
     var body: some View {
         NavigationView{
             ZStack{
-                Color(red: 214/255, green: 215/255, blue: 217/255).ignoresSafeArea()
+                Color(red: 214/255, green: 215/255, blue: 217/255)
+                    .ignoresSafeArea()
                 VStack {
                     Spacer()
                     Image("taskaroo")

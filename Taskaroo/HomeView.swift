@@ -14,6 +14,7 @@ struct HomeView: View {
                 Text("Tasks")
                     .fontWeight(.bold)
                     .font(.title)
+                    .foregroundColor(Color(red: 21/255, green: 99/255, blue: 139/255))
                 List {
                     ForEach(tasks, id: \.self){ task in
                         NavigationLink(destination: TaskDetailView(task: task)) {
@@ -22,21 +23,24 @@ struct HomeView: View {
                                     VStack (alignment: .leading, spacing: 2){
                                         Text(task.title)
                                             .font(.title2)
+                                            .foregroundColor(Color(red: 21/255, green: 99/255, blue: 139/255))
                                         Text(formatDate(task.dueDate))
-                                            .font(.subheadline)
-                                            .foregroundStyle(.gray)
+                                            .fontWeight(.light)
+                                            .font(.system(size: 13))
                                     }
                                     Spacer()
                                     StatusIndicator(status: task.status)
                                 }
                             })
                         }
+
+                        .listRowBackground(Color(red: 214/255, green: 215/255, blue: 217/255))
                     }
-//                    .onDelete(perform: { indexSet in
-//                        tasks.remove(atOffsets: indexSet)
-//                    })
                 }
+                .scrollContentBackground(.hidden)
+                
             }
+            .background(Color(red: 214/255, green: 215/255, blue: 217/255))
             .listStyle(.inset)
             .navigationBarHidden(true)
         }
