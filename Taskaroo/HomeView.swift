@@ -28,6 +28,7 @@ struct HomeView: View {
                                             Text(formatDate(task.dueDate))
                                                 .fontWeight(.light)
                                                 .font(.system(size: 13))
+                                                .foregroundColor(.black)
                                         }
                                         Spacer()
                                         StatusIndicator(status: task.status)
@@ -44,7 +45,9 @@ struct HomeView: View {
             .background(Color(red: 214/255, green: 215/255, blue: 217/255))
             .listStyle(.inset)
             .navigationBarHidden(true)
+            .preferredColorScheme(.light)
         }
+        .accentColor(Color(red: 21/255, green: 99/255, blue: 139/255))
     }
 }
 

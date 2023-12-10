@@ -11,13 +11,18 @@ import FirebaseAuthUI
 import FirebaseFirestore
 
 
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+        return true
+    }
+}
 @main
 struct TaskarooApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     @StateObject var viewModel = AuthenticationViewModel()
 
-    init() {
-      setupAuthentication()
-    }
     var body: some Scene {
         WindowGroup {
             AuthView()
@@ -25,9 +30,4 @@ struct TaskarooApp: App {
         }
     }
 }
-extension TaskarooApp {
-  private func setupAuthentication() {
-      FirebaseApp.configure()
-      let db = Firestore.firestore()
-  }
-}
+

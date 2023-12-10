@@ -6,13 +6,21 @@
 //
 
 import SwiftUI
+import Firebase
 import FirebaseGoogleAuthUI
 import FirebaseOAuthUI
-
+import FirebaseFirestore
+import _AuthenticationServices_SwiftUI
 
 struct AuthView: View {
+    
+    @EnvironmentObject var viewModel: AuthenticationViewModel
+    let db = Firestore.firestore()
     var body: some View {
-        NavigationView{
+        switch viewModel.state {
+        case .signedIn:
+            HomeView()
+        case .signedOut:
             ZStack{
                 Color(red: 214/255, green: 215/255, blue: 217/255)
                     .ignoresSafeArea()
@@ -35,24 +43,13 @@ struct AuthView: View {
                         .padding([.bottom], 20)
                         .foregroundColor(Color(red: 0, green: 0, blue: 0))
                     
-                    NavigationLink{
-                        HomeView()
-                        .navigationBarTitle("")
-                        .navigationBarHidden(true)
-                    } label: {
-                        SignInWithAppleSwiftUIButton()
-                    }
-                    NavigationLink{
-                        HomeView()
-                    } label: {
-                        SignInWithGoogleSwiftUIButton()
-                    }
+                    viewModel.SignInButton(SignInWithAppleButton.Style.black)
+                    SignInWithGoogleSwiftUIButton()
                     Spacer()
                 }
             }
         }
     }
-    
 }
 
 #Preview {

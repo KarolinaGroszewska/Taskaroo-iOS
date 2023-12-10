@@ -7,12 +7,18 @@
 
 import Firebase
 import GoogleSignIn
+import SwiftUI
+import AuthenticationServices
+import CryptoKit
 
 class AuthenticationViewModel: ObservableObject {
+    
     enum SignInState {
         case signedIn
         case signedOut
     }
+    fileprivate var currentNonce: String?
+
     @Published var state: SignInState = .signedOut
     func signIn() {
       if GIDSignIn.sharedInstance.hasPreviousSignIn() {
@@ -40,7 +46,7 @@ class AuthenticationViewModel: ObservableObject {
         if let error = error {
           print(error.localizedDescription)
         } else {
-          self.state = .signedIn
+            self.state = .signedIn
         }
       }
     }
@@ -53,4 +59,70 @@ class AuthenticationViewModel: ObservableObject {
         print(error.localizedDescription)
       }
     }
+    
+    func SignInButton(_ type: SignInWithAppleButton.Style) -> some View{
+        return SignInWithAppleButton(.signIn) { request in
+            let nonce = self.randomNonceString()
+            self.currentNonce = nonce
+            request.requestedScopes = [.fullName, .email]
+            request.nonce = self.sha256(nonce)
+        } onCompletion: { result in
+            switch result {
+            case .success(let authResults):
+                NotificationManager.instance.requestAuthorization()
+                   if let appleIDCredential = authResults.credential as? ASAuthorizationAppleIDCredential {
+                       guard let nonce = self.currentNonce else {
+                         fatalError("Invalid state: A login callback was received, but no login request was sent.")
+                       }
+                       guard let appleIDToken = appleIDCredential.identityToken else {
+                         print("Unable to fetch identity token")
+                         return
+                       }
+                       guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
+                         print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
+                         return
+                       }
+                       let credential = OAuthProvider.credential(withProviderID: "apple.com", idToken: idTokenString,rawNonce: nonce)
+                       Auth.auth().signIn(with: credential) { (result, error) in
+                           NotificationManager.instance.requestAuthorization()
+                           self.state = .signedIn
+                       }
+                   }
+            case .failure(let error):
+                print("Authorisation failed: \(error.localizedDescription)")
+            }
+        }
+        .frame(width: 280, height: 60, alignment: .center)
+        .signInWithAppleButtonStyle(type)
+    }
+    func randomNonceString(length: Int = 32) -> String {
+          precondition(length > 0)
+          var randomBytes = [UInt8](repeating: 0, count: length)
+          let errorCode = SecRandomCopyBytes(kSecRandomDefault, randomBytes.count, &randomBytes)
+          if errorCode != errSecSuccess {
+            fatalError(
+              "Unable to generate nonce. SecRandomCopyBytes failed with OSStatus \(errorCode)"
+            )
+          }
+
+          let charset: [Character] =
+            Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
+
+          let nonce = randomBytes.map { byte in
+            charset[Int(byte) % charset.count]
+          }
+
+          return String(nonce)
+        }
+        
+        @available(iOS 13, *)
+        func sha256(_ input: String) -> String {
+          let inputData = Data(input.utf8)
+          let hashedData = SHA256.hash(data: inputData)
+          let hashString = hashedData.compactMap {
+            String(format: "%02x", $0)
+          }.joined()
+
+          return hashString
+        }
 }

@@ -21,12 +21,15 @@ struct TaskDetailView: View {
                     .font(.largeTitle)
                     .multilineTextAlignment(.center)
                 Text("Due Date: " + formatDate(task.dueDate))
+                    .foregroundColor(.black)
                 Text(task.description)
                     .padding([.leading, .trailing], 15)
                     .padding([.top], 1)
                     .multilineTextAlignment(.leading)
+                    .foregroundColor(.black)
                 StatusIndicatorDetail(status: task.status)
                 Text(extractDates(task: task))
+                    .foregroundColor(.black)
                 Spacer()
                 HStack{
                     if task.status.rawValue == "completed"{
