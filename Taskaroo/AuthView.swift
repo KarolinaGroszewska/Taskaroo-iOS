@@ -15,7 +15,6 @@ import _AuthenticationServices_SwiftUI
 struct AuthView: View {
     
     @EnvironmentObject var viewModel: AuthenticationViewModel
-    let db = Firestore.firestore()
     var body: some View {
         switch viewModel.state {
         case .signedIn:

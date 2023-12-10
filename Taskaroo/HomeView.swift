@@ -6,12 +6,43 @@
 //
 
 import SwiftUI
-
+import Firebase
+import FirebaseFirestore
 
 struct HomeView: View {
     @State private var searchText = ""
     @State private var isEditing = false
     
+    let db = Firestore.firestore()
+    var tasks = [Task]()
+    mutating func getAllTasks(){
+        db.collection("users/\(uid)/tasks").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+//                    var taskTitle = document.get("title") as! String
+//                    var taskDescription = document.get("description") as! String
+//                    var dueDate = document.get("dueDate") as! Timestamp
+//                    var timeTracker = document.get("timeTracker") as! Array<String>
+//                    var status = document.get("status") as! String
+//                    var statusObject: Status
+//                    if status == "completed"{
+//                        statusObject = .completed
+//                    } else if status == "blocked" {
+//                        statusObject = .blocked
+//                    } else if status == "archived" {
+//                        statusObject = .archived
+//                    } else {
+//                        statusObject = .pending
+//                    }
+//                    var finalDueDate = Date(timeIntervalSince1970: <#T##TimeInterval#>)
+//                    tasks.append(Task(title: taskTitle, description: taskDescription, status: statusObject, timeTracker: [Date], dueDate:   ))
+                }
+            }
+        }
+    }
+
     var body: some View {
         NavigationView{
             VStack{
@@ -70,6 +101,8 @@ struct HomeView: View {
                     }
                 }
                 .scrollContentBackground(.hidden)
+            }
+            .onAppear {
             }
             .background(Color(red: 214/255, green: 215/255, blue: 217/255))
             .listStyle(.inset)

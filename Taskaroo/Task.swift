@@ -7,15 +7,15 @@
 
 import Foundation
 import SwiftUI
-enum Status: String{
+enum Status: String, Encodable{
     case pending
     case completed
     case blocked
     case archived
 }
 
-struct Task: Identifiable, Hashable{
-    var id: Int
+struct Task: Encodable, Identifiable, Hashable{
+    var id = UUID()
     var title: String
     var description: String
     var status: Status
@@ -23,11 +23,7 @@ struct Task: Identifiable, Hashable{
     var dueDate: Date
 }
 
-var tasks: [Task] = [
-    Task(id: 1, title: "This is a test", description: "gywduobds", status: .pending, timeTracker: [], dueDate: Date.distantFuture),
-    Task(id: 2, title: "How cool", description: "gysdeiygedw", status: .blocked, timeTracker: [], dueDate: Date.now),
-    Task(id: 3, title: "Kari", description: "guofceqoye", status: .completed, timeTracker: [], dueDate: Date.distantPast)
-]
+
 
 func formatDate(_ date: Date) -> String {
     let formatter = DateFormatter()

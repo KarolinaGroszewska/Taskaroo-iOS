@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4A173E212B264D4500036793 /* TaskEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A173E202B264D4500036793 /* TaskEditView.swift */; };
+		4A173E232B266FCA00036793 /* NewItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A173E222B266FCA00036793 /* NewItemViewModel.swift */; };
+		4A173E252B26748F00036793 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A173E242B26748F00036793 /* User.swift */; };
 		4A6154F32B2100C000B6C00E /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6154F22B2100C000B6C00E /* TaskDetailView.swift */; };
 		4A6154F52B21021D00B6C00E /* StatusIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6154F42B21021D00B6C00E /* StatusIndicatorView.swift */; };
 		4A7DBCEF2B1E9422002553C0 /* TaskarooApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7DBCEE2B1E9422002553C0 /* TaskarooApp.swift */; };
@@ -47,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		4A173E202B264D4500036793 /* TaskEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditView.swift; sourceTree = "<group>"; };
+		4A173E222B266FCA00036793 /* NewItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewModel.swift; sourceTree = "<group>"; };
+		4A173E242B26748F00036793 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4A6154DA2B20F4C500B6C00E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4A6154E12B20F5C500B6C00E /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		4A6154F12B20F67400B6C00E /* Taskaroo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Taskaroo.entitlements; sourceTree = "<group>"; };
@@ -118,15 +122,17 @@
 				4A6154DA2B20F4C500B6C00E /* Info.plist */,
 				4AD278812B2000D100C370FC /* GoogleService-Info.plist */,
 				4A7DBCEE2B1E9422002553C0 /* TaskarooApp.swift */,
+				4AD2788B2B2008FB00C370FC /* Task.swift */,
+				4A173E242B26748F00036793 /* User.swift */,
 				4A7DBCF02B1E9422002553C0 /* AuthView.swift */,
 				4AD278872B20064200C370FC /* HomeView.swift */,
 				4A173E202B264D4500036793 /* TaskEditView.swift */,
 				4A6154F22B2100C000B6C00E /* TaskDetailView.swift */,
 				4A6154F42B21021D00B6C00E /* StatusIndicatorView.swift */,
-				4AD2788B2B2008FB00C370FC /* Task.swift */,
-				4ACBFC352B25375B00DD0BA5 /* NotificationManager.swift */,
 				4AD278832B20043E00C370FC /* GoogleSignInButton.swift */,
+				4ACBFC352B25375B00DD0BA5 /* NotificationManager.swift */,
 				4AED9E3B2B1EA0B000EBB809 /* AuthenticationViewModel.swift */,
+				4A173E222B266FCA00036793 /* NewItemViewModel.swift */,
 				4AED9E3F2B1EA67600EBB809 /* Assets.xcassets */,
 				4A7DBCF42B1E9423002553C0 /* Preview Content */,
 			);
@@ -235,6 +241,8 @@
 				4AD278842B20043E00C370FC /* GoogleSignInButton.swift in Sources */,
 				4AD278882B20064200C370FC /* HomeView.swift in Sources */,
 				4A7DBCF12B1E9422002553C0 /* AuthView.swift in Sources */,
+				4A173E232B266FCA00036793 /* NewItemViewModel.swift in Sources */,
+				4A173E252B26748F00036793 /* User.swift in Sources */,
 				4A7DBCEF2B1E9422002553C0 /* TaskarooApp.swift in Sources */,
 				4A6154F52B21021D00B6C00E /* StatusIndicatorView.swift in Sources */,
 				4A173E212B264D4500036793 /* TaskEditView.swift in Sources */,

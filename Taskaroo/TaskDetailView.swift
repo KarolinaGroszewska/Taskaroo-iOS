@@ -107,5 +107,5 @@ struct TaskDetailView: View {
 
 
 #Preview {
-    TaskDetailView(task: Task(id: 3, title: "Kari", description: "This is a sample description for a task I would be completing, how cool of me.", status: .completed, timeTracker: [], dueDate: Date.now))
+    TaskDetailView(task: Task(title: "Kari", description: "This is a sample description for a task I would be completing, how cool of me.", status: .completed, timeTracker: [], dueDate: Date.now))
 }

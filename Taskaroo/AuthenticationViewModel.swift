@@ -11,15 +11,19 @@ import SwiftUI
 import AuthenticationServices
 import CryptoKit
 
+var uid = ""
 class AuthenticationViewModel: ObservableObject {
     
     enum SignInState {
         case signedIn
         case signedOut
     }
+    
     fileprivate var currentNonce: String?
-
+    let db = Firestore.firestore()
+    
     @Published var state: SignInState = .signedOut
+    
     func signIn() {
       if GIDSignIn.sharedInstance.hasPreviousSignIn() {
         GIDSignIn.sharedInstance.restorePreviousSignIn { [unowned self] user, error in
@@ -46,6 +50,10 @@ class AuthenticationViewModel: ObservableObject {
         if let error = error {
           print(error.localizedDescription)
         } else {
+            let user = Auth.auth().currentUser
+            uid = user!.uid
+            let email = user?.email
+            self.db.collection("users").document(uid).setData(["email": email ?? ""], merge: true)
             self.state = .signedIn
         }
       }
@@ -85,6 +93,10 @@ class AuthenticationViewModel: ObservableObject {
                        let credential = OAuthProvider.credential(withProviderID: "apple.com", idToken: idTokenString,rawNonce: nonce)
                        Auth.auth().signIn(with: credential) { (result, error) in
                            NotificationManager.instance.requestAuthorization()
+                           let user = Auth.auth().currentUser
+                           uid = user!.uid
+                           let email = user?.email
+                           self.db.collection("users").document(uid).setData(["email": email ?? ""], merge: true)
                            self.state = .signedIn
                        }
                    }
@@ -125,4 +137,13 @@ class AuthenticationViewModel: ObservableObject {
 
           return hashString
         }
+    func addNewUser(user: User){
+        let db = Firestore.firestore()
+        let newDocumentReference = db.collection("users").document(user.id.description)
+        try? newDocumentReference.setData(from: user){error in
+            if error != nil{
+                
+            }
+        }
+    }
 }
