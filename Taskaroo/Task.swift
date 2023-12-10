@@ -13,6 +13,7 @@ enum Status: String{
     case blocked
     case archived
 }
+
 struct Task: Identifiable, Hashable{
     var id: Int
     var title: String
